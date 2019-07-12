@@ -1,8 +1,9 @@
 <template>
 	
 <div>
-	<div id="templatemo_wrapper">
+	
 		
+	<div id="templatemo_wrapper">
 		<Nav></Nav>
 	     	<!-- slider -->
 	 

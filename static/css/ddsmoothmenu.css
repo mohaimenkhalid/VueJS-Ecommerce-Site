@@ -28,16 +28,15 @@
 	text-decoration: none;
 	outline: none;
 	text-align: center;
-	background: #48d5e8;
-	border-radius: 10%;
+	background: url(../images/templatemo_menu_divider.png) right center no-repeat
 }
 
 
 
 .ddsmoothmenu ul li a:hover, .ddsmoothmenu ul li a.active, .ddsmoothmenu ul li a.router-link-active
 {
-	background-color:#DFDCCB;
-	color: #000;
+	color: #fff;
+	background: url(../images/templatemo_menu_hover.jpg) repeat-x
 	
 }
 

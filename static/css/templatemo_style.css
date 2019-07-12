@@ -13,7 +13,7 @@ body {
 	line-height: 1.4em; 
 	background-color: #2e2e2e;
 	background-repeat: repeat;
-	background-image: url(../assets/images/templatemo_body.jpg)
+	background-image: url(../images/templatemo_body.jpg)
 }
 
 a, a:link, a:visited { 
@@ -363,7 +363,8 @@ h6 {
 	line-height: 28px;	
 	text-align: center;
 	color: #000;
-	background: #48d5e8;
+	cursor: pointer;
+	background: url(../images/add_to_cart.jpg)
 }
 
 .product_box .detail {
@@ -373,7 +374,8 @@ h6 {
 	height: 28px;
 	line-height: 28px;
 	text-align: center;	
-	background: url(../../Vue-ecom/src/assets/images/detail.jpg)
+	cursor: pointer;
+	background: url(../images/detail.jpg)
 }
 
 .checkout input { 

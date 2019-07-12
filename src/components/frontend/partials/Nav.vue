@@ -19,9 +19,7 @@
                 <li><router-link to="/" exact>Home</router-link></li>
                 <li><router-link to="/products">Products</router-link></li>
                 <li><router-link to="/cart">Cart</router-link></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="faqs.html">FAQs</a></li>
-                <li><a href="checkout.html">Checkout</a></li>
+                <li><router-link to="/about">About</router-link></li>
                 <li><router-link to="/contact">Contact</router-link></li>
             </ul>
             <br style="clear: left" />
