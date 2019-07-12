@@ -1,0 +1,45 @@
+<template>
+	<div>
+		<div id="templatemo_header">
+    
+	    	<div id="site_title">
+	        	<h1><a href="#">Station Shop</a></h1>
+	        </div>
+	        
+	        <div id="header_right">
+		        <a href="#">My Account</a> | <a href="#">My Wishlist</a> | <a href="#">My Cart</a> | <a href="#">Checkout</a> | <a href="#">Log In</a>
+			</div>
+	        
+	        <div class="cleaner"></div>
+    	</div> <!-- END of templatemo_header -->
+    
+    <div id="templatemo_menu">
+    	<div id="top_nav" class="ddsmoothmenu">
+            <ul>
+                <li><router-link to="/" exact>Home</router-link></li>
+                <li><router-link to="/products">Products</router-link></li>
+                <li><router-link to="/cart">Cart</router-link></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="faqs.html">FAQs</a></li>
+                <li><a href="checkout.html">Checkout</a></li>
+                <li><router-link to="/contact">Contact</router-link></li>
+            </ul>
+            <br style="clear: left" />
+        </div> <!-- end of ddsmoothmenu -->
+        <div id="menu_second_bar">
+        	<div id="top_shopping_cart">
+            	Shopping Cart: <strong>3 Products</strong> ( <a href="#">Show Cart</a> )
+            </div>
+        	<div id="templatemo_search">
+                <form action="#" method="get">
+                  <input type="text" value="Search" name="keyword" id="keyword" title="keyword" onfocus="clearText(this)" onblur="clearText(this)" class="txt_field" />
+                  <input type="submit" name="Search" value=" Search " alt="Search" id="searchbutton" title="Search" class="sub_btn"  />
+                </form>
+            </div>
+            <div class="cleaner"></div>
+    	</div>
+    </div> <!-- END of templatemo_menu -->
+
+
+	</div>
+</template>
