@@ -1,7 +1,7 @@
 
 <?php 
 	
-	$conn = new mysqli("localhost", "root", "", "ecommerce_vue");
+	$conn = new mysqli("localhost", "root", "", "vue-ecom");
 	if ($conn->connect_error) {
 		die("Database Could not Connected.");
 	}
@@ -27,9 +27,14 @@
    			$price = $_POST['price'];
    			$image = $_POST['image'];
    			$category = $_POST['category'];
-   			$supplier = $_POST['supplier'];
+   			$brand = $_POST['brand'];
+   			$featured = $_POST['featured'];
 
-		$result = $conn->query("INSERT INTO `product` (`pname`, `description`, `price`, `image`, `category`, `supplier` ) VALUES('$name', '$description', '$price', '$image', '$category', '$supplier') " );
+   			$slug= preg_replace('/[^A-Za-z0-9-]+/', '-', $name);
+	
+
+
+		$result = $conn->query("INSERT INTO `product` (`pname`, `description`, `price`, `image`, `category`, `brand`, `featured`,  `slug` ) VALUES('$name', '$description', '$price', '$image', '$category', '$brand', '$featured', '$slug') " );
 		
 		if ($result) {
 			$res['message'] = "Product added successfully";
@@ -99,7 +104,6 @@
 	header("Access-Control-Allow-Origin: *");
 	header("Access-Control-Allow-Credentials", "true");
 	header("Access-Control-Allow-Methods", "POST,GET,OPTIONS,PUT,DELETE");
-
 	header("Content-type: application/json");
 	echo json_encode($res);
 	die();

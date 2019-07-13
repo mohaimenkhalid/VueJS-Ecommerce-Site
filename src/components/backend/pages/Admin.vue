@@ -1,7 +1,7 @@
 <template>
   <div class="admin">
     <div id="header">
-        <h1 class="fleft">Simple E-commerce</h1>
+        <h1 class="fleft">Admin Panel</h1>
         <a href="" title="Logout" class="fright" @click="logoutnow()">Logout</a>
     </div>
 
@@ -10,9 +10,9 @@
       <ul class="nav">
         <li><router-link to="/admin/dashboard">Dashboard</router-link></li>
         <li><router-link to="/admin/category">Category</router-link></li>
-        <li><router-link to="/admin/supplier">Supplier</router-link></li>
+        <li><router-link to="/admin/brand">Brand</router-link></li>
         <li><router-link to="/admin/product">Product</router-link></li>
-        <li><router-link to="/shop">Shop</router-link></li>
+        <li><router-link to="/shop">Orders</router-link></li>
       </ul>
       
     </div>

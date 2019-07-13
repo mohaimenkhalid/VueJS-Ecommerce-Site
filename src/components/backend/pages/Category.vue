@@ -132,9 +132,12 @@
 
 		methods:{
 			addNewCategory(){
+
+				console.log(this.newcategory);
 				var formData = this.toFormData(this.newcategory);
 				this.$axios.post("http://localhost/vue-ecom/src/assets/api/category_api.php?action=create", formData)
 				.then(res=>{
+
 					 if (res.data.error) {
 
 			            this.$iziToast.error({
@@ -145,7 +148,7 @@
 
 		         		this.newcategory = {}
 		         		this.$iziToast.success({
-		            		 title: 'Welcome',
+		            		 title: 'Success',
 		             		 message: res.data.message
 		          		}); 
 		          		this.init();  

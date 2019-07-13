@@ -1,7 +1,7 @@
 
 <?php 
 	
-	$conn = new mysqli("localhost", "root", "", "ecommerce_vue");
+	$conn = new mysqli("localhost", "root", "", "vue-ecom");
 	if ($conn->connect_error) {
 		die("Database Could not Connected.");
 	}
@@ -18,67 +18,67 @@
 
 
 
-/*...........Create Supplier...............*/
+/*...........Create Brand...............*/
 
 	if ($action == 'create') {
 
    			$name = $_POST['name'];
    			$description = $_POST['description'];
 
-		$result = $conn->query("INSERT INTO `supplier` (`sname`, `description`) VALUES('$name', '$description') ");
+		$result = $conn->query("INSERT INTO `brand` (`bname`, `description`) VALUES('$name', '$description') ");
 		
 		if ($result) {
-			$res['message'] = "Supplier added successfully";
+			$res['message'] = "Brand added successfully";
 		}else{
 			$res['error'] = true;
-			$res['message'] = "Supplier could not insert";
+			$res['message'] = "Brand could not insert";
 		}
 	}
 
-/*...........read Supplier...............*/
+/*...........read Brand...............*/
 
 	if ($action == 'read') {
-			$result = $conn->query("SELECT * FROM `supplier` ");
-			$supplier = array();
+			$result = $conn->query("SELECT * FROM `brand` ");
+			$brand = array();
 
 			while ($row = $result->fetch_assoc()) {
-				array_push($supplier, $row);
+				array_push($brand, $row);
 			}
 
-			$res['supplier'] = $supplier;
+			$res['brand'] = $brand;
 		}
 
-/*...........Update Supplier...............*/
+/*...........Update Brand...............*/
 
 	if ($action == 'update') {
 
-   			$name = $_POST['name'];
+   			$name = $_POST['bname'];
    			$description = $_POST['description'];
    			$id = $_POST['id'];
 
-		$result = $conn->query("UPDATE `supplier` SET `sname` = '$name', `description` = '$description' WHERE `id`= '$id' ");
+		$result = $conn->query("UPDATE `brand` SET `bname` = '$name', `description` = '$description' WHERE `id`= '$id' ");
 		
 		if ($result) {
-			$res['message'] = "Supplier Updated successfully";
+			$res['message'] = "Brand Updated successfully";
 		}else{
 			$res['error'] = true;
-			$res['message'] = "Supplier could not Updated";
+			$res['message'] = "Brand could not Updated";
 		}
 	}
 
-/*...........Delete Supplier...............*/
+/*...........Delete Brand...............*/
 
 	if ($action == 'delete') {
  			
    			$id = $_POST['id'];
 
-		$result = $conn->query("DELETE FROM `supplier`  WHERE `id` ='$id' ");
+		$result = $conn->query("DELETE FROM `brand`  WHERE `id` ='$id' ");
 		
 		if ($result) {
-			$res['message'] = "Supplier Deleted successfully";
+			$res['message'] = "A Brand Deleted successfully";
 		}else{
 			$res['error'] = true;
-			$res['message'] = "Supplier could not Deleted";
+			$res['message'] = "Brand could not Deleted";
 		}
 
 	}

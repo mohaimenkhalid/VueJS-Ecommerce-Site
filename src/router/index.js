@@ -12,6 +12,8 @@ import AdminLogin from '@/components/backend/AdminLogin'
 import Admin from '@/components/backend/pages/Admin'
 import Dashboard from '@/components/backend/pages/Dashboard'
 import Category from '@/components/backend/pages/Category'
+import Brand from '@/components/backend/pages/Brand'
+import Product from '@/components/backend/pages/Product'
 
 Vue.use(Router)
 
@@ -84,6 +86,20 @@ export default new Router({
 				component: Category
 
 			},
+
+			{
+				path: 'brand',
+				name: 'admin.brand',
+				component: Brand
+
+			},
+
+			{
+				path: 'product',
+				name: 'admin.product',
+				component: Product
+
+			}
 
 
 		]
