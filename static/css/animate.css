@@ -1,0 +1,9 @@
+.bar-enter-active, .bar-leave-active{
+			
+	transition: margin-right .5s;
+}
+
+.bar-enter, .bar-leave-to{
+			
+	margin-right: -222px;
+}

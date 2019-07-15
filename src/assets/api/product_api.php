@@ -47,7 +47,7 @@
 /*...........read product...............*/
 
 	if ($action == 'read') {
-			$result = $conn->query("SELECT p.id, p.pname, p.price, p.image, p.description, p.supplier, p.category, c.cname, s.sname FROM product p, category c, supplier s WHERE p.category = c.id AND p.supplier = s.id ");
+			$result = $conn->query("SELECT p.id, p.pname, p.price, p.image, p.description, p.category, p.brand, p.featured, p.available, p.slug, c.cname, b.bname FROM product p, category c, brand b WHERE p.category = c.id AND p.brand = b.id ");
 			$product = array();
 
 			while ($row = $result->fetch_assoc()) {
@@ -62,13 +62,16 @@
 	if ($action == 'update') {
 
    			$id = $_POST['id'];
+   			
    			$name = $_POST['pname'];
    			$description = $_POST['description'];
    			$price = $_POST['price'];
    			$category = $_POST['category'];
-   			$supplier = $_POST['supplier'];
+   			$brand = $_POST['brand'];
+   			$featured = $_POST['featured'];
+   			$status = $_POST['available'];
 
-		$result = $conn->query("UPDATE `product` SET `pname` = '$name', `description` = '$description', `price` = '$price', `category` = '$category', `supplier` = '$supplier' WHERE `id`= '$id' ");
+		$result = $conn->query("UPDATE `product` SET `pname` = '$name', `description` = '$description', `price` = '$price', `category` = '$category', `brand` = '$brand', `featured` = '$featured', `available` = '$status' WHERE `id`= '$id' ");
 		
 		if ($result) {
 			$res['message'] = "product Updated successfully";

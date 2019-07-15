@@ -26,7 +26,7 @@
         </div> <!-- end of ddsmoothmenu -->
         <div id="menu_second_bar">
         	<div id="top_shopping_cart">
-            	Shopping Cart: <strong>3 Products</strong> ( <a href="#">Show Cart</a> )
+            	Shopping Cart: <strong>3 Products</strong> ( <button style="cursor: pointer; background: aqua;" @click="showcart()">Show Cart </button> )
             </div>
         	<div id="templatemo_search">
                 <form action="#" method="get">
@@ -41,3 +41,20 @@
 
 	</div>
 </template>
+
+<script>
+    export default{
+        name: 'Nav',
+        data(){
+            return{
+
+            }
+        },
+
+        methods: {
+            showcart(){
+                this.$eventBus.$emit("cartsidebar", true);
+            }
+        }
+    }
+</script>

@@ -7,16 +7,22 @@ import axios from 'axios'
 import iziToast from 'iziToast'
 import Modal from './components/backend/partials/Modal'
 
+import store from './store'
+
 Vue.config.productionTip = false
 
 Vue.prototype.$axios = axios;
 Vue.prototype.$iziToast = iziToast;
 Vue.component("modal", Modal);
 
+var eventBus = new Vue();
+Vue.prototype.$eventBus = eventBus;
+
 /* eslint-disable no-new */
 new Vue({
   el: '#app',
   router,
+  store,
   components: { App },
   template: '<App/>'
 })

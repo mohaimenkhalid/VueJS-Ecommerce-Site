@@ -28,7 +28,7 @@
 	import Footer from "../partials/Footer.vue";
 	
 	export default{
-		name: 'Index.vue',
+		name: 'Index',
 		data(){
 			return{
 

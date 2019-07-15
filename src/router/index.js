@@ -6,6 +6,7 @@ import Products from '@/components/frontend/pages/Products'
 import Cart from '@/components/frontend/pages/Cart'
 import About from '@/components/frontend/pages/About'
 import Contact from '@/components/frontend/pages/Contact'
+import Productdetails from '@/components/frontend/pages/Productdetails'
 
 /*Admin Panel*/
 import AdminLogin from '@/components/backend/AdminLogin'
@@ -55,7 +56,14 @@ export default new Router({
 				path: 'about',
 				name: 'frontend.about',
 				component: About
-			}
+			},
+
+			{
+				path: 'productdetails/:id',
+				name: 'admin.product.details',
+				component: Productdetails
+
+			},
 		]
 
     },
@@ -100,7 +108,6 @@ export default new Router({
 				component: Product
 
 			}
-
 
 		]
 	}

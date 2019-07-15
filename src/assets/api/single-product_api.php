@@ -1,7 +1,7 @@
 
 <?php 
 	
-	$conn = new mysqli("localhost", "root", "", "ecommerce_vue");
+	$conn = new mysqli("localhost", "root", "", "vue-ecom");
 	if ($conn->connect_error) {
 		die("Database Could not Connected.");
 	}
@@ -22,7 +22,7 @@
 /*...........read product...............*/
 
 	if ($id) {
-			$result = $conn->query("SELECT p.id, p.pname, p.price, p.image, p.description, p.supplier, p.category, c.cname, s.sname FROM product p, category c, supplier s WHERE p.category = c.id AND p.supplier = s.id AND p.id = '$id' limit 1");
+			$result = $conn->query("SELECT p.id, p.pname, p.price, p.image, p.description, p.brand, p.category, p.available, c.cname, b.bname FROM product p, category c, brand b WHERE p.category = c.id AND p.brand = b.id AND p.id = '$id' limit 1");
 			$product = array();
 
 			while ($row = $result->fetch_assoc()) {
