@@ -102,6 +102,7 @@
 
 				/*this.$store.commit("addToCart", { product: this.product, quantity: this.qty });*/
 
+                //Check Product ..
                 var carts = this.$store.getters.getCart;
 
                 var found = false;
@@ -118,8 +119,6 @@
                 if(!found) {
                     this.$store.dispatch("addToCartByAction", { product: this.product, quantity: this.qty });
                 }
-     
-                //this.$store.dispatch("addToCartByAction", { product: this.product, quantity: this.qty });
 
 			},
 

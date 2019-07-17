@@ -18,10 +18,10 @@
 		  	<div><button @click=" cartsidebar = false" class="leftcartbar" style="border:none;
 			background: rgba(255,255,255,.1); font-size: 30px; cursor: pointer;"  title="Close">X</button></div>
 			<h2 style="text-align: center; background-color: aqua; padding-top: 20px; padding-bottom: 20px">Your Cart</h2>
-			<h3>Total Cart Item - {{ getTotalCart }}</h3>
+			<h3 v-if="getTotalCart !== 0">Total Cart Item - {{ getTotalCart }}</h3>
 
 
-					<table >
+					<table v-if="getTotalCart !== 0">
 						<tr>
 							<th>Name</th>
 							<th>Quantity</th>
@@ -43,14 +43,19 @@
 						<tr>
 							<td></td>
 							<td><strong>Total</strong></td>
-							<td>{{ total }}</td>
+							<td>{{ total }} </td>
 						</tr>
 						<tr>
-							<td colspan="3">
-								<center><button class="addBtn">Checkout</button></center>
+							<td colspan="4">
+								<router-link to="/checkout"><center><button class="addBtn" @click="cartsidebar = false;">Checkout</button></center></router-link>
 							</td>
 						</tr>
 					</table>
+
+					<span v-else style="text-align: center; ">
+					<h3> Your Cart is Empty!</h3>
+					<center><router-link to="/products"><button class="addBtn" @click="cartsidebar = false;">Continue Shoping</button></router-link></center>
+					</span>
 			</div>
 
 </transition>
@@ -67,7 +72,6 @@
 		data(){
 			return{
 				cartsidebar : false,
-				
 			}
 		},
 
@@ -94,7 +98,6 @@
 			// total(){
 			// 	return this.$store.getters.getTotal;
 			// }
-
 		},
 
 		created() {

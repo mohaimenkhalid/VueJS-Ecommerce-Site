@@ -15,8 +15,6 @@
 		$action  = $_GET['action'];
 	}
 
-
-
 /*...........Login api...............*/
 
 	if ($action == 'login') {
@@ -24,27 +22,29 @@
 		$password = $_POST['password'];
 
 		$result = $conn->query("SELECT `id` FROM `user` WHERE `email` = '$email' AND `password` = '$password'");
-		$admins = array();
+		$users = array();
 
 		while ($row = $result->fetch_assoc()) {
-			array_push($admins, $row);
+			array_push($users, $row);
 		}
 
-		if (!empty($admins)) {
+		if (!empty($users)) {
 
 			$token = base64_encode(random_bytes(64));
 			$token_send = $conn->query("UPDATE `user` SET `token` = '$token' WHERE `email` = '$email' AND `password` = '$password'");
 			$token_result = $conn->query("SELECT `token` FROM `user` WHERE `email` = '$email' AND `password` = '$password'");
 			while ($row_token = $token_result->fetch_assoc()) {
-					$res['token'] = $row_token['token'];
+					$res['user_token'] = $row_token['token'];
 				}
 
-			$res['message'] = "Login Successfully!!";
+
+			$res['message'] = "User Login Successfully!!";
 		}else{
 			$res['error'] = true;
 			$res['message'] = "Incorrect email or password!!";
 		}
 	}
+
 
 
 

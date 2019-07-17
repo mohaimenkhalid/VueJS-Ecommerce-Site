@@ -7,7 +7,8 @@
 	        </div>
 	        
 	        <div id="header_right">
-		        <a href="#">My Account</a> | <a href="#">My Wishlist</a> | <a href="#">My Cart</a> | <a href="#">Checkout</a> | <a href="#">Log In</a>
+		        <a href="#">My Account</a> | <a href="#">My Wishlist</a> | <a href="#">My Cart</a> | <a href="#">Checkout</a> | 
+                 <a  @click="logoutnow()"  >Log out</a> | <router-link to="/user/login" >Log in</router-link>
 			</div>
 	        
 	        <div class="cleaner"></div>
@@ -22,6 +23,9 @@
                 <li><router-link to="/about">About</router-link></li>
                 <li><router-link to="/contact">Contact</router-link></li>
             </ul>
+
+    
+
             <br style="clear: left" />
         </div> <!-- end of ddsmoothmenu -->
         <div id="menu_second_bar">
@@ -47,14 +51,34 @@
         name: 'Nav',
         data(){
             return{
-
+                 
+                
             }
+        },
+
+        mounted(){
+             
+              
         },
 
         methods: {
             showcart(){
                 this.$eventBus.$emit("cartsidebar", true);
-            }
-        }
+            },
+
+            logoutnow(){
+                localStorage.setItem("user_token", "");
+
+                this.check_login = false;
+                this.$iziToast.success({
+                          title: 'Success',
+                          message: 'Logout Successfully'
+                    });
+            },
+   
+            
+        },
+
+        
     }
 </script>
